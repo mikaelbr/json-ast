@@ -1,8 +1,5 @@
 open Printf
-open Tokenize
 open Token
-
-let file = "test.json"
 
 let read_file filename =
   let lines = ref [] in
@@ -16,10 +13,10 @@ let read_file filename =
     List.rev !lines ;;
 
 let get_content filename =
-  read_file file
-  |> List.fold_left (^) "" in
+  read_file filename
+  |> List.fold_left (^) "";;
 
-get_content file
-|> tokenize
+get_content "test.json"
+|> Tokenize.tokenize
 |> List.map token_to_string
 |> List.iter print_endline
