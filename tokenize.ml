@@ -1,10 +1,6 @@
 open Batteries
 open Token
 
-type pos = { line: int; col: int; offset: int };;
-type loc = { start: pos; stop: pos };;
-type token_data = { token : Token.t; loc: loc }
-
 let loc_skip i pos =
   { pos with col = pos.col + i;
              offset = pos.offset + i }

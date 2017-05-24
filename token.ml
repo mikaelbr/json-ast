@@ -13,7 +13,12 @@ type t =
   | T_LBRACKET
   | T_RBRACKET
   | T_NULL
-  | T_EOF
+  | T_EOF;;
+
+type pos = { line: int; col: int; offset: int };;
+type loc = { start: pos; stop: pos };;
+type token_data = { token : t; loc: loc };;
+
 
 let token_to_string = function
   | T_NUMBER n -> "T_NUMBER " ^ n
@@ -30,4 +35,4 @@ let token_to_string = function
   | T_LBRACKET -> "T_LBRACKET"
   | T_RBRACKET -> "T_RBRACKET"
   | T_NULL -> "T_NULL"
-  | T_EOF -> "T_EOF"
+  | T_EOF -> "T_EOF";;
