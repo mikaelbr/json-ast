@@ -19,7 +19,7 @@ let token_string cl source =
     match source with
     | '"' :: t when prev <> '\\' -> ""
     | h :: t -> string_of_char h ^ seek_string h t
-    | _ -> failwith "unreachable string" in
+    | _ -> "" in
   let str = seek_string '"' source in
   let length = String.length str in
   (T_STRING str, loc_gen (loc_skip length) cl), skip length source;;
@@ -30,7 +30,7 @@ let token_number cl source =
         | '0'..'9' | 'e' | '.' | '+' | '-' ->
           string_of_char h ^ seek_number t
         | _ -> "")
-    | _ -> failwith "unreachable number" in
+    | [] -> "" in
   let str = seek_number source in
   let length = String.length str in
   (T_NUMBER str, loc_gen (loc_skip length) cl), skip length source;;

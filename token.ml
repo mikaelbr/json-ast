@@ -20,7 +20,7 @@ type loc = { start: pos; stop: pos };;
 type token_data = { token : t; loc: loc };;
 
 
-let token_to_string = function
+let string_of_token = function
   | T_NUMBER n -> "T_NUMBER " ^ n
   | T_STRING x -> "T_STRING " ^ x
   | T_BOOL b -> "T_BOOL " ^ string_of_bool b

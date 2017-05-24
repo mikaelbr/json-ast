@@ -1,6 +1,7 @@
 open Printf
 open Token
 open Tokenize
+open Ast_printer
 
 let read_file filename =
   let lines = ref [] in
@@ -23,9 +24,14 @@ let string_of_loc (loc: loc) =
   (string_of_pos "start" loc.start) ^ " - " ^ (string_of_pos "end" loc.stop) ;;
 
 let string_of_token_data data =
-  sprintf "%s, %s" (token_to_string data.token) (string_of_loc data.loc);;
+  sprintf "%s, %s" (string_of_token data.token) (string_of_loc data.loc);;
 
-get_content "test.json"
-|> tokenize
+let data = get_content "test.json"
+           |> tokenize
+           |> Parser.parse ;;
+
+print_ast_value data
+
+(*
 |> List.map string_of_token_data
-|> List.iter print_endline
+|> List.iter print_endline*)
