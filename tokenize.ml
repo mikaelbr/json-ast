@@ -21,7 +21,7 @@ let token_string cl source =
     | h :: t -> string_of_char h ^ seek_string h t
     | _ -> "" in
   let str = seek_string '"' source in
-  let length = String.length str in
+  let length = (String.length str + 1) in
   (T_STRING str, loc_gen (loc_skip length) cl), skip length source;;
 
 let token_number cl source =

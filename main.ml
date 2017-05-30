@@ -24,14 +24,13 @@ let string_of_loc (loc: loc) =
   (string_of_pos "start" loc.start) ^ " - " ^ (string_of_pos "end" loc.stop) ;;
 
 let string_of_token_data data =
-  sprintf "%s, %s" (string_of_token data.token) (string_of_loc data.loc);;
+  sprintf "%s – %s" (string_of_token data.token) (string_of_loc data.loc);;
 
 let data = get_content "test.json"
-           |> tokenize
-           |> Parser.parse ;;
+           |> tokenize ;;
 
-print_ast_value data
+data |> Parser.parse |> print_ast_value ;;
 
-(*
-|> List.map string_of_token_data
-|> List.iter print_endline*)
+(*data
+  |> List.map string_of_token_data
+  |> List.iter print_endline*)

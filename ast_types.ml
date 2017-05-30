@@ -19,7 +19,7 @@ type ast_identifier =
 type ast_value =
     Literal of ast_literal
   | Array of ast_array
-  | Object of ast_object_child
+  | Object of ast_object
 
 and ast_object_child =
   { _type: Token.t;
