@@ -1,6 +1,6 @@
 # JSON AST generator for OCaml
 
-Work in progress.
+Project currently mainly for learning OCaml. Work in progress.
 
 ```ml
 (* Tokenize *)
