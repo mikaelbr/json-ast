@@ -1,11 +1,11 @@
 # OASIS_START
-# DO NOT EDIT (digest: f3d493bafa6443a23ccf68c5b6f332ee)
+# DO NOT EDIT (digest: b668eddf59200ef2014453ee2d9f8747)
 version = "0.1"
 description = "Package for creating ASTs from JSON"
-archive(byte) = "json-ast.cma"
-archive(byte, plugin) = "json-ast.cma"
-archive(native) = "json-ast.cmxa"
-archive(native, plugin) = "json-ast.cmxs"
-exists_if = "json-ast.cma"
+archive(byte) = "ast_of_json.cma"
+archive(byte, plugin) = "ast_of_json.cma"
+archive(native) = "ast_of_json.cmxa"
+archive(native, plugin) = "ast_of_json.cmxs"
+exists_if = "ast_of_json.cma"
 # OASIS_STOP
 

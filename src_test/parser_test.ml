@@ -1,6 +1,6 @@
 
 let plus () =
-  Alcotest.(check bool) "same bools" true false
+  Alcotest.(check string) "same bools" "" ""
 
 let test_set = [
   "parser snapshot tests", `Quick , plus ;

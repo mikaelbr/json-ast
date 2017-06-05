@@ -11,17 +11,9 @@ OASISFormat: 0.4
 BuildTools: ocamlbuild
 Plugins: META (0.4), DevFiles (0.4)
 
-Executable "json-asta"
+Library "ast_of_json"
   Path: src
-  MainIs: main.ml
-  CompiledObject: byte
-
-Library "json-ast"
-  Pack:               false
-  CompiledObject:     best
-  Path:               src
-  Findlibname:        json_ast
-  Modules:            Json_ast
+  Modules: Json_ast
 
 Executable "test_json_ast"
   Path: src_test
@@ -29,12 +21,12 @@ Executable "test_json_ast"
   Build$: flag(tests)
   CompiledObject: best
   Install: false
-  BuildDepends: alcotest
+  BuildDepends: ast_of_json, alcotest
 
 Test "test_json_ast"
   Run$: flag(tests)
   TestTools: test_json_ast
-  Command: $test_json_ast
+  Command: $test_json_ast -q
   WorkingDirectory: src_test
 
 SourceRepository master

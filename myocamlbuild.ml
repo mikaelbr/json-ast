@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 77c7a4d12ccdc3e76625758bb8f3a884) *)
+(* DO NOT EDIT (digest: 0b5cfd9e0007dbb5273dc87f05ed6baf) *)
 module OASISGettext = struct
 (* # 22 "src/oasis/OASISGettext.ml" *)
 
@@ -885,10 +885,10 @@ end
 open Ocamlbuild_plugin;;
 let package_default =
   {
-     MyOCamlbuildBase.lib_ocaml = [("json-ast", ["src"], [])];
+     MyOCamlbuildBase.lib_ocaml = [("ast_of_json", ["src"], [])];
      lib_c = [];
      flags = [];
-     includes = []
+     includes = [("src_test", ["src"])]
   }
   ;;
 

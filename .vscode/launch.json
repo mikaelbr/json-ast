@@ -8,6 +8,14 @@
       "program": "${workspaceRoot}/main.byte",
       "stopOnEntry": false,
       "preLaunchTask": "build" // Build before launch
+    },
+    {
+      "name": "OCaml Tests",
+      "type": "ocamldebug",
+      "request": "launch",
+      "program": "${workspaceRoot}/test.byte",
+      "stopOnEntry": false,
+      "preLaunchTask": "build" // Build before launch
     }
   ]
 }

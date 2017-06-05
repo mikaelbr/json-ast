@@ -1,4 +1,5 @@
 PKG alcotest
 
-S src
-B _build
+S src/**
+S src_test/**
+B _build/**

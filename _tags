@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 9392d4a7f8e747e3572709d58b3d4a02)
+# DO NOT EDIT (digest: 0ce0d001855c9cfe34ed5720bf36c132)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -14,10 +14,11 @@ true: annot, bin_annot
 ".git": not_hygienic
 "_darcs": -traverse
 "_darcs": not_hygienic
-# Executable json-asta
-# Library json-ast
-"src/json-ast.cmxs": use_json-ast
+# Library ast_of_json
+"src/ast_of_json.cmxs": use_ast_of_json
 # Executable test_json_ast
 <src_test/test.{native,byte}>: pkg_alcotest
+<src_test/test.{native,byte}>: use_ast_of_json
 <src_test/*.ml{,i,y}>: pkg_alcotest
+<src_test/*.ml{,i,y}>: use_ast_of_json
 # OASIS_STOP

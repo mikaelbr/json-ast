@@ -20,7 +20,6 @@ type pos = { line: int; col: int; offset: int };;
 type loc = { start: pos; stop: pos };;
 type token_data = { token : t; loc: loc };;
 
-
 let string_of_token = function
   | T_NUMBER n -> "T_NUMBER " ^ n
   | T_STRING x -> "T_STRING " ^ x
