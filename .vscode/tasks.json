@@ -9,6 +9,10 @@
     {
       "taskName": "build",
       "problemMatcher": "$ocamlc"
+    },
+    {
+      "taskName": "test",
+      "problemMatcher": "$ocamlc"
     }
   ]
 }

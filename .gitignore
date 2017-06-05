@@ -2,5 +2,11 @@
 *.o
 *.cmi
 
-*.d.byte
+.gitignore
 _build
+*.native
+*.byte
+*.docdir
+
+setup.data
+setup.log

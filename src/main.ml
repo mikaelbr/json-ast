@@ -2,6 +2,7 @@ open Printf
 open Token
 open Tokenize
 open Ast_printer
+open Batteries
 
 let read_file filename =
   let lines = ref [] in
@@ -29,8 +30,10 @@ let string_of_token_data data =
 let data = get_content "test.json"
            |> tokenize ;;
 
-data |> Parser.parse |> print_ast_value ;;
+let print_parse = print_ast_value << Parser.parse;;
 
-(*data
-  |> List.map string_of_token_data
-  |> List.iter print_endline*)
+let print_tokens =
+  List.iter print_endline << List.map string_of_token_data;;
+
+(*print_tokens data;*)
+print_parse data;;

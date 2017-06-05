@@ -3,6 +3,7 @@ type t =
   | T_LITERAL
   | T_OBJECT
   | T_ARRAY
+  | T_PROPERTY
   | T_NUMBER of string
   | T_STRING of string
   | T_BOOL of bool
@@ -28,6 +29,7 @@ let string_of_token = function
   | T_LITERAL -> "T_LITERAL"
   | T_OBJECT -> "T_OBJECT"
   | T_ARRAY -> "T_ARRAY"
+  | T_PROPERTY -> "T_PROPERTY"
   | T_COMMA -> "T_COMMA"
   | T_COLON -> "T_COLON"
   | T_LCURLY -> "T_LCURLY"

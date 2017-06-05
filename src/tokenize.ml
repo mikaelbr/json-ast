@@ -59,7 +59,6 @@ let rec token cl source = match source with
   | [] -> (T_EOF, loc_gen loc_skip_line cl), []
   | _ -> failwith "unexpected token";;
 
-
 let to_token_data (t, loc) =
   { token = t ; loc }
 

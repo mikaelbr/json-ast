@@ -1,0 +1,44 @@
+Name: json-ast
+Version: 0.1
+Synopsis: Package for creating ASTs from JSON
+Authors: Mikael Brevik <mikaelbre@gmail.com>
+License: MIT
+
+Description: Package for creating ASTs from JSON.
+Homepage: https://github.com/mikaelbr/json-ast
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Executable "json-asta"
+  Path: src
+  MainIs: main.ml
+  CompiledObject: byte
+
+Library "json-ast"
+  Pack:               false
+  CompiledObject:     best
+  Path:               src
+  Findlibname:        json_ast
+  Modules:            Json_ast
+
+Executable "test_json_ast"
+  Path: src_test
+  MainIs: test.ml
+  Build$: flag(tests)
+  CompiledObject: best
+  Install: false
+  BuildDepends: alcotest
+
+Test "test_json_ast"
+  Run$: flag(tests)
+  TestTools: test_json_ast
+  Command: $test_json_ast
+  WorkingDirectory: src_test
+
+SourceRepository master
+  Type: git
+  Location: https://github.com/mikaelbr/json-ast.git
+  Branch: master
+  Browser: https://github.com/mikaelbr/json-ast
